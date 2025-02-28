@@ -13,7 +13,7 @@ const GlobalServices = () => {
                         className="w-[10rem] sm:w-[23rem]"
                     />
                     <p className="text-[#000000] sm:w-[70rem] py-[1rem] mt-[2rem] font-[500] text-[1.7rem] text-center sm:text-start w-[90%]"><span className="font-[700]">Redis Premier Global Services Partner.</span> Recognized by redis as a Go-To services partner, AceMQ maintains a global footprint, but with our headquarters in North America, we are widely recognized as the <Link className="p-[.4rem] rounded-[.4rem] underline bg-[#FF6600] cursor-pointer text-white" href={"https://redis.io/partners/"}>
-                        Go-To North American Redis</Link> </p>
+                        Go-To North American Redis Partner</Link> </p>
                 </div>
             </div>
         </section>
