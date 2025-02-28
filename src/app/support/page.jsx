@@ -2,7 +2,10 @@ import MaxContainer from "../components/common/maxContainer";
 import Hero from "../components/support/hero";
 import Body from "../components/support/body";
 import Banner from "../components/support/banner";
-import Contact from "../components/common/contact";
+import dynamic from "next/dynamic";
+const LazyContact = dynamic(() => import("../components/common/contact"), {
+  ssr: false,
+});
 
 export const metadata = {
   title: "RabbitMQ Support Services | Troubleshooting & Maintenance",
@@ -34,7 +37,7 @@ const Services = () => {
       <MaxContainer>
         <Body />
         <Banner />
-        <Contact route={"support"} />
+        <LazyContact route={"support"} />
       </MaxContainer>
     </>
   );

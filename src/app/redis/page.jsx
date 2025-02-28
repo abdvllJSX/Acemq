@@ -5,7 +5,10 @@ import RedisSolutions from "../components/redis/solution";
 import Expertise from "../components/redis/expertise";
 import Service from "../components/redis/service";
 import CTA from "../components/redis/cta";
-import Contact from "../components/common/contact";
+import dynamic from "next/dynamic";
+const LazyContact = dynamic(() => import("../components/common/contact"), {
+  ssr: false,
+});
 import MaxContainer from "../components/common/maxContainer/index";
 
 export const metadata = {
@@ -45,7 +48,7 @@ const Redis = () => {
       <CTA />
       <div className="sm:mt-[-20rem]">
         <MaxContainer>
-          <Contact />
+          <LazyContact route={"redis"} />
         </MaxContainer>
       </div>
     </div>

@@ -6,7 +6,10 @@ import Services from "../components/kafka/services";
 import Features from "../components/kafka/features";
 import CTA from "../components/kafka/cta";
 import MaxContainer from "../components/common/maxContainer/index";
-import Contact from "../components/common/contact";
+import dynamic from "next/dynamic";
+const LazyContact = dynamic(() => import("../components/common/contact"), {
+  ssr: false,
+});
 
 export const metadata = {
   title: "Kafka Consulting & Support | Expert Kafka Solutions by AceMQ",
@@ -45,7 +48,7 @@ const Kafka = () => {
       <CTA />
       <div className="sm:mt-[-20rem]">
         <MaxContainer>
-          <Contact />
+          <LazyContact route={"kafka"} />
         </MaxContainer>
       </div>
     </div>

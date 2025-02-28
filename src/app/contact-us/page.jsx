@@ -1,7 +1,9 @@
 import MaxContainer from "../components/common/maxContainer";
 import Hero from "../components/contact/hero";
-import Body from "../components/contact/body";
-import Brand from "../components/common/brand";
+import dynamic from "next/dynamic";
+const LazyBody = dynamic(() => import("../components/contact/body"), {
+  ssr: false,
+});
 
 export const metadata = {
   title: "Contact AceMQ | Expert RabbitMQ Support & Consulting",
@@ -26,7 +28,7 @@ const Index = () => {
   return (
     <MaxContainer>
       <Hero />
-      <Body />
+      <LazyBody />
     </MaxContainer>
   );
 };

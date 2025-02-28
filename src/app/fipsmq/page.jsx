@@ -2,7 +2,10 @@ import MaxContainer from "../components/common/maxContainer";
 import Hero from "../components/Fips/hero";
 import Body from "../components/Fips/body";
 import Banner from "../components/Fips/banner";
-import Contact from "../components/common/contact";
+import dynamic from "next/dynamic";
+const LazyContact = dynamic(() => import("../components/common/contact"), {
+  ssr: false,
+});
 
 export const metadata = {
   title: "FIPS Compliance | Secure RabbitMQ Solutions by AceMQ",
@@ -34,7 +37,7 @@ const FIPs = () => {
       <MaxContainer>
         <Body />
         <Banner />
-        <Contact route={"fipsmq"} />
+        <LazyContact route={"fipsmq"} />
       </MaxContainer>
     </>
   );

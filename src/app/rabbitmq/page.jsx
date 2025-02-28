@@ -6,7 +6,10 @@ import Achievement from "../components/rabbitMQ/achievement";
 import Services from "../components/rabbitMQ/services";
 import Impact from "../components/common/impact";
 import Capabilities from "../components/rabbitMQ/capabilities";
-import Contact from "../components/common/contact";
+import dynamic from "next/dynamic";
+const LazyContact = dynamic(() => import("../components/common/contact"), {
+  ssr: false,
+});
 
 export const metadata = {
   title: "RabbitMQ Consulting, Support & Professional Services",
@@ -42,7 +45,7 @@ const RabbitMQ = () => {
         <Services />
         <Impact />
         <Capabilities />
-        <Contact route={"rabbitmq"} />
+        <LazyContact route={"rabbitmq"} />
       </MaxContainer>
     </>
   );

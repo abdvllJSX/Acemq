@@ -1,13 +1,17 @@
-import Hero from './components/home/hero';
-import Brands from './components/common/brand';
-import Services from './components/home/services'
-import Impact from './components/common/impact'
-import Domians from './components/home/domains'
-import MaxContainer from './components/common/maxContainer'
-import Technologies from './components/home/technologies'
-import Partners from './components/home/partners'
-import About from './components/home/about'
-import Contact from './components/common/contact'
+import Hero from "./components/home/hero";
+import Brands from "./components/common/brand";
+import Services from "./components/home/services";
+import Impact from "./components/common/impact";
+import Domians from "./components/home/domains";
+import MaxContainer from "./components/common/maxContainer";
+import Technologies from "./components/home/technologies";
+import Partners from "./components/home/partners";
+import About from "./components/home/about";
+import dynamic from "next/dynamic";
+
+const LazyContact = dynamic(() => import("./components/common/contact"), {
+  ssr: false,
+});
 
 export const metadata = {
   title: "AceMQ Consulting | Expert RabbitMQ Messaging & Queuing Solutions",
@@ -42,7 +46,7 @@ export default function Home() {
       <MaxContainer>
         <Partners />
         <About />
-        <Contact />
+        <LazyContact route="home" />
       </MaxContainer>
     </>
   );
