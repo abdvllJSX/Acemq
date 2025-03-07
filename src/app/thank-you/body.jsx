@@ -1,8 +1,16 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import Link from "next/link";
+import { sendGTMEvent } from "@next/third-parties/google";
 
 const Body = () => {
+  useEffect(() => {
+    if (!window.hasSentThankYouEvent) {
+      sendGTMEvent({ event: "thank_you" });
+      window.hasSentThankYouEvent = true;
+    }
+  }, []);
+
   return (
     <div className="flex h-screen items-center justify-center">
       <div>
