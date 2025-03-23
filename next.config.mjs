@@ -13,11 +13,6 @@ const nextConfig = {
         destination: "/support/",
         permanent: true,
       },
-      {
-        source: "/mq-services/",
-        destination: "/rabbitmq/",
-        permanent: false,
-      },
     ];
   },
 };
