@@ -1,4 +1,4 @@
-import ButtonLink from "../common/buttonLink";
+import ButtonLink from "../common/ButtonLink";
 import Img from "../common/image";
 
 const UseCase = () => {
