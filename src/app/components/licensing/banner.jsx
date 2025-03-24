@@ -1,5 +1,5 @@
-import ButtonLink from "../common/buttonLink";
 import Img from "../common/image";
+import ButtonLink from "../common/ButtonLink";
 
 const Banner = () => {
     return (
