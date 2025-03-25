@@ -1,5 +1,5 @@
 "use client";
-import React, { use } from "react";
+import React from "react";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
@@ -75,9 +75,6 @@ const Index = () => {
         },
       ]
     },
-    // { name: "MQ Services", path: "/mq-services/" },
-    { name: "Customer Stories", path: "/stories/" },
-    { name: "Blog", path: "/blogs/" },
     {
       name: "Services",
       children: [
@@ -95,6 +92,11 @@ const Index = () => {
         },
       ],
     },
+    { name: "Support", path: "/support/" },
+    // { name: "MQ Services", path: "/mq-services/" },
+    { name: "Customer Stories", path: "/stories/" },
+    { name: "Blog", path: "#" },
+    
   ];
 
   return (
